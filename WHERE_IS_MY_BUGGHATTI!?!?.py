@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Home"
+    return "Hello! You have just reached the API!"
 
 if __name__ == "__main__":
     app.run(debug=True)
