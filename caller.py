@@ -1,12 +1,8 @@
-import socket
-newSocket = socket.socket(socket_family, socket_type)
+import requests
 
+def get_greeting(name):
+    response = requests.get(f'http://localhost:5000/say_hello/{name}')
 
-run = False
-while run == False:
-
-    if input("What's up? ") == 'get stuff from api':
-        run = True
-    else:
-        print("I am stupid and don't understand that")
-while run == True:
+    print(response.text)
+nombre = input("What's your name? ")
+get_greeting(nombre)
